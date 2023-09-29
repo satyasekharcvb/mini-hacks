@@ -1,0 +1,71 @@
+<template>
+    <div class="slds-p-around_x-large">
+        <div class="slds-grid slds-wrap slds-align_absolute-center">
+            <div
+                class="slds-col slds-size_1-of-1 slds-large-size_1-of-3 slds-small-size_1-of-2"
+            >
+                <div
+                    class="slds-text-heading_large slds-m-bottom_medium itc title"
+                >
+                    Welcome to Camp Mini Hacks
+                </div>
+                <!-- <p class = "itc">Enter your details to get started.</p>-->
+                <lightning-input
+                    type="text"
+                    label="Name"
+                    required="true"
+                    name="fullname"
+                    onchange={handleNameChange}
+                ></lightning-input>
+                <lightning-input
+                    type="email"
+                    pattern="^(.+)@(.+)\.(.+)$"
+                    label="Email Address"
+                    required="true"
+                    name="email"
+                    class="slds-m-top_x-small"
+                    message-when-pattern-mismatch="Please enter a valid email address"
+                    onchange={handleEmailChange}
+                ></lightning-input>
+                <div
+                    class="slds-form-element__label slds-no-flex header slds-m-top_x-small"
+                >
+                    By submitting, you confirm that you agree to the&nbsp;
+                    <a
+                        href="https://trailblazer.salesforce.com/Ev_siteTOS"
+                        target="_blank"
+                        >Event Terms of Service</a
+                    >
+                    &nbsp;and to the storing and processing of your personal
+                    data by Salesforce as described in the&nbsp;
+                    <a
+                        href="https://www.salesforce.com/company/privacy/full_privacy/"
+                        target="_blank"
+                        >Privacy Statement.</a
+                    >
+                </div>
+
+                <div class="slds-m-top_medium slds-m-bottom_x-large">
+                    <lightning-button
+                        variant="brand"
+                        label="SUBMIT"
+                        title="Register"
+                        onclick={handleClick}
+                    ></lightning-button>
+                </div>
+                <template if:true={error}>
+                    <utils-error-panel errors={error}></utils-error-panel>
+                </template>
+            </div>
+            <!--<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3 slds-small-size_1-of-2">
+                <div class="slds-p-left_xx-large slds-p-right_xx-large">
+                  <img src="https://sf-mini-hacks.herokuapp.com/resources/mhGroup_1.jpeg" class="imgshape"></img>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <!-- <div class="spacer"></div>-->
+    <template if:true={showSpinner}>
+        <utils-spinner></utils-spinner>
+    </template>
+</template>

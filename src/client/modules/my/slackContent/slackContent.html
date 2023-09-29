@@ -1,0 +1,70 @@
+<template>
+    <div class="slds-p-around_medium wrapper">
+        <div
+            class="slds-m-top_xx-large slds-m-bottom_x-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Slack Hack</b>
+        </div>
+        <div
+            class="slds-grid slds-grid_align-center slds-wrap slds-gutters slds-m-bottom_x-large showhack"
+        >
+            <dx-card
+                class="slds-m-bottom_x-large beginner slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Create an Incident Automation with the new Workflow Builder"
+                started="true"
+            >
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="1"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack1.completed}
+                        hack-number="1"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+        </div>
+
+        <div
+            class="slds-m-top_xx-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Helpful Resources</b>
+        </div>
+
+        <div
+            class="slds-align_absolute-center slds-m-bottom_x-large slds-text-align_center slds-text-heading_small"
+            style="line-height: 30px; margin-top: 25px"
+        >
+            <ul class="slds-list_dotted slds-text-align_left">
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://slack.com/help/articles/17542172840595-Create-a-new-workflow-in-Slack"
+                        target="_blank"
+                        >https://slack.com/help/articles/17542172840595-Create-a-new-workflow-in-Slack
+                    </a>
+                </li>
+                <li>
+                    <i>Blog:</i>&nbsp;<a
+                        href="https://slack.com/blog/productivity/efficiency-workflow-builder"
+                        target="_blank"
+                        >https://slack.com/blog/productivity/efficiency-workflow-builder
+                    </a>
+                </li>
+                <li>
+                    <i>Video:</i>&nbsp;<a
+                        href="https://youtu.be/z-htMbM3FfM"
+                        target="_blank"
+                        >https://youtu.be/z-htMbM3FfM
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

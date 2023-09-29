@@ -1,0 +1,28 @@
+<template>
+    <div role="main" class="main-content">
+        <div>
+            <div class="home-banner-main">
+                <img
+                    src="https://sf-mini-hacks.herokuapp.com/resources/sfdevslogo-2.png"
+                    style="
+                        max-width: 100%;
+                        position: relative;
+                        margin-bottom: 2rem;
+                    "
+                />
+                <h1
+                    class="home-banner_heading dx-text-heading-1"
+                    style="margin-bottom: 2rem"
+                >
+                    {heading}
+                </h1>
+                <span class="home-banner_body dx-text-heading-3 white"
+                    >{subHeading}</span
+                >
+                <div class="home-banner_button">
+                    <slot></slot>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

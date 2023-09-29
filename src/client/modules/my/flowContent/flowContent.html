@@ -1,0 +1,144 @@
+<template>
+    <div class="slds-p-around_medium wrapper">
+        <div
+            class="slds-m-top_x-large slds-m-bottom_x-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Flow Hack</b>
+        </div>
+
+        <!--<div
+            class="slds-m-top_large  slds-text-align_center slds-text-heading_medium title"
+        >
+        <b>Pick a level of hack you want to do</b>
+        </div>
+        <div
+            class="slds-align_absolute-center slds-m-top_medium slds-m-bottom_medium itc"
+            >
+            <span>
+                <lightning-button-group>
+                    <lightning-button
+                        label="I'm new to Mulesoft"
+                        variant={b1Variant}
+                        onclick={changeToggle}
+                        class="button"
+                    ></lightning-button>
+                    <lightning-button
+                        label="I want to go further"
+                        variant={b2Variant}
+                        onclick={changeToggle}
+                        class="button"
+                    ></lightning-button>
+                </lightning-button-group>
+            </span>    
+        </div>
+        <br>
+
+        <template if:false={checked}>
+            <div class="slds-align_absolute-center">
+                <img
+                    src="https://sf-mini-hacks.herokuapp.com/resources/show-up.png"
+                    class="right"
+                    style="width: 400px; overflow: scroll;"
+                />
+            </div>
+        </template>-->
+
+        <div
+            class="slds-grid slds-grid_align-center slds-wrap slds-gutters slds-m-bottom_x-large showhack"
+        >
+            <dx-card
+                class="slds-m-bottom_x-large beginner slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Create a Weight Training App"
+                started="true"
+            >
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="4"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack4.completed}
+                        hack-number="4"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+            <!--<template if:true={checked2}>
+            <dx-card
+                class="slds-m-bottom_x-large intermediate slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Synchronize Database Changes Between Salesforce And Postgres Using Mulesoft"
+                started="true"
+            >
+                
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="10"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack10.completed}
+                        hack-number="10"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+        </template>-->
+        </div>
+        <div
+            class="slds-m-top_xx-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Helpful Resources</b>
+        </div>
+
+        <div
+            class="slds-align_absolute-center slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+            style="line-height: 30px; margin-top: 25px"
+        >
+            <ul class="slds-list_dotted slds-text-align_left">
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://help.salesforce.com/s/articleView?id=sf.flow.htm&type=5"
+                        target="_blank"
+                        >Salesforce Flow
+                    </a>
+                </li>
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://salesforce-flowsome.com/flow-how-to-use-counter/"
+                        target="_blank"
+                    >
+                        Flow: How To Use "Counter" - Salesforce Flowsome!</a
+                    >
+                    <ul class="slds-list_dotted">
+                        <li>
+                            <a
+                                href="https://salesforce-flowsome.com/simple-counter-example-in-flow/"
+                                target="_blank"
+                            >
+                                Use Case: Simple Counter Example in Flow -
+                                Salesforce Flowsome!</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <i>Video:</i>&nbsp;<a
+                        href="https://www.youtube.com/watch?v=sXN8Wnw-O1A"
+                        target="_blank"
+                        >How to Count Salesforce Flow Loop Iterations - YouTube
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

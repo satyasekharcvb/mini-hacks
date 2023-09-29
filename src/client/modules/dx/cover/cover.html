@@ -1,0 +1,62 @@
+<template>
+    <div part="container" class="container variant_dark has-slotted">
+        <div class="main-content">
+            <div role="heading" aria-level="1" class="title dx-text-heading-2">
+                <img
+                    src="https://sf-mini-hacks.herokuapp.com/resources/sfdevslogo.png"
+                    style="
+                        width: 110px;
+                        position: relative;
+                        margin-bottom: 15px;
+                    "
+                />
+                {heading}
+            </div>
+            <div
+                class="body dx-text-heading-3"
+                style="margin-bottom: 15px; letter-spacing: 1px"
+            >
+                {subHeading}
+            </div>
+            <div
+                class="body dx-text-heading-4"
+                style="margin-bottom: 15px; letter-spacing: 1px"
+            >
+                {eventDate}
+            </div>
+            <div class="body dx-text-body-1">{body}<br /><slot></slot></div>
+        </div>
+        <svg
+            width="1920px"
+            height="331px"
+            viewBox="0 0 1920 331"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            class="swoop-silhouette"
+        >
+            <defs>
+                <path
+                    d="M1920,330 L76.7313881,330.008182 C51.2800917,330.255837 25.7029624,330.372286 0,330.357528 L0,330 L76.7313881,330.008182 C789.975765,323.067922 1404.39864,213.086385 1920,0.0635708029 L1920,0.0635708029 L1920,330 Z"
+                    id="path-1"
+                ></path>
+            </defs>
+            <g
+                id="Documentation-landing-page"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+            >
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use
+                    id="Combined-Shape"
+                    fill="#FFFFFF"
+                    xlink:href="#path-1"
+                ></use>
+            </g>
+        </svg>
+    </div>
+</template>

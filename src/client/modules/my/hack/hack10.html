@@ -1,0 +1,134 @@
+<template>
+    <ol class="slds-list_ordered">
+        <li>
+            This challenge requires
+            <ul class="slds-list_dotted">
+                <li>
+                    <a
+                        href="https://anypoint.mulesoft.com/login/#/signup?apintent=generic"
+                        target="_blank"
+                    >
+                        MuleSoft Anypoint Studio free trial.</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.mulesoft.com/lp/dl/studio"
+                        target="_blank"
+                    >
+                        MuleSoft Anypoint Studio.</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://developer.salesforce.com/signup"
+                        target="_blank"
+                        >Salesforce Platform Developer Edition Org.</a
+                    >.
+                </li>
+            </ul>
+        </li>
+        <li>Solution must use Change Data Capture events in Salesforce</li>
+        <li>
+            Change Data Capture setup in Salesforce must have the Contact object
+            included
+        </li>
+        <li>
+            One MuleSoft Composer flow is created with the following modules
+            <ul class="slds-list_dotted">
+                <li>
+                    Replay Channel Listener (Salesforce Connector) - To
+                    Subscribe to Contact Change Events
+                </li>
+                <ul class="slds-list_dotted">
+                    <li>
+                        Connector configuration should use the username,
+                        password and security token from your Lighting Platform
+                        Developer Edition Org
+                    </li>
+                    <li>
+                        Streaming channel should be set to
+                        data/ContactChangeEvent
+                    </li>
+                </ul>
+                <li>Logger - To log the inbound payload</li>
+                <ul class="slds-list_dotted">
+                    <li>Set the message to payload</li>
+                </ul>
+                <li>Set Variable</li>
+                <ul class="slds-list_dotted">
+                    <li>
+                        Sets a variable called sfdc_id to the value in the
+                        inbound change event that corresponds to the Salesforce
+                        record id -
+                        payload_.data.payload.ChangeEventHeader.recordIds[0]
+                    </li>
+                </ul>
+                <li>Set Variable</li>
+                <ul class="slds-list_dotted">
+                    <li>
+                        Sets a variable called last_name to the value in the
+                        inbound change event that corresponds to the Salesforce
+                        LastName field - payload.data.payload.Name.LastName
+                    </li>
+                </ul>
+                <li>Set Variable</li>
+                <ul class="slds-list_dotted">
+                    <li>
+                        Sets a variable called change_type to the value in the
+                        inbound change event that corresponds to the type of
+                        change operation -
+                        payload.data.payload.ChangeEventHeader.changeType
+                    </li>
+                </ul>
+                <li>Choice - to determine if the type of change is CREATE</li>
+                <ul class="slds-list_dotted">
+                    <li>Add logic using vars.change_type == 'CREATE'</li>
+                </ul>
+                <li>
+                    Insert (Database Module) - To insert row into Postgres
+                    database when the type of change is CREATE
+                </li>
+                <ul class="slds-list_dotted">
+                    <li>Connector configuration should have these values</li>
+                </ul>
+                <ul class="slds-list_dotted">
+                    <li>Connection: Generic Connection</li>
+                    <li>
+                        URL:
+                        jdbc:postgresql://ec2-3-226-145-156.compute-1.amazonaws.com:5432/d3sble2rp3l8vl?sslmode=require
+                    </li>
+                    <li>Driver class name: org.postgresql.Driver</li>
+                    <li>User: u1no0uatvcv7k9</li>
+                    <li>
+                        Password:
+                        p146ce3b4233c3237a353b66bba97406cd326f9e0cca50c6b3c60a4b46ca9e51e
+                    </li>
+                </ul>
+                <li>SQL Query Text</li>
+                <ul class="slds-list_dotted">
+                    <li>
+                        Should use a SQL statement that inserts into the
+                        customer table setting values for the columns pg_sfdc_id
+                        and pg_last_name from the corresponding variables
+                        created earlier
+                    </li>
+                </ul>
+            </ul>
+        </li>
+        <li>
+            When the MuleSoft flow is run you should be able to verify in the
+            logs that the inbound payload is visible
+        </li>
+        <li>
+            When you navigate to this
+            <a
+                href="https://tdx22-data-sync-mini-hack.herokuapp.com/"
+                target="_blank"
+                >page</a
+            >
+            you should see your newly inserted record - check the record id and
+            last name values
+        </li>
+    </ol>
+</template>

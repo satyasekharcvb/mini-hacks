@@ -1,0 +1,62 @@
+<template>
+    <div class="slds-p-around_medium wrapper">
+        <div
+            class="slds-m-top_xx-large slds-m-bottom_x-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>MuleSoft Hack</b>
+        </div>
+
+        <div
+            class="slds-grid slds-grid_align-center slds-wrap slds-gutters slds-m-bottom_x-large showhack"
+        >
+            <dx-card
+                class="slds-m-bottom_x-large beginner slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Build a To-Do App for Task Management using MuleSoft’s API Design GUI"
+                started="true"
+            >
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="3"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack3.completed}
+                        hack-number="3"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+        </div>
+        <div
+            class="slds-m-top_xx-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Helpful Resources</b>
+        </div>
+        <div
+            class="slds-align_absolute-center slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+            style="line-height: 30px; margin-top: 25px"
+        >
+            <ul class="slds-list_dotted slds-text-align_left">
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://docs.mulesoft.com/design-center/design-create-publish-api-visual-editor"
+                        target="_blank"
+                        >Create an API Specification with the Visual API Editor
+                    </a>
+                </li>
+                <li>
+                    <i>Video:</i>&nbsp;<a
+                        href="https://youtu.be/XIrCqwmTPQs"
+                        target="_blank"
+                        >Design an API Specification in Design Center</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

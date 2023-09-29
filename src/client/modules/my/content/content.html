@@ -1,0 +1,82 @@
+<template>
+    <!-- HEADING -->
+
+    <div class="slds-m-top_medium slds-p-around_small">
+        <my-process onshowcontent={handleContent}></my-process>
+    </div>
+
+    <template if:true={showContent}>
+        <div
+            class="slds-text-align_center slds-text-heading_medium slds-m-bottom_medium"
+        ></div>
+
+        <div class="slds-m-top_small mainContent welcome">
+            <template if:true={showLWCContent}>
+                <my-lwc-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-lwc-content>
+            </template>
+            <template if:true={showCLIContent}>
+                <my-cli-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-cli-content>
+            </template>
+            <template if:true={showSlackContent}>
+                <my-slack-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-slack-content>
+            </template>
+            <template if:true={showTableauContent}>
+                <my-tableau-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-tableau-content>
+            </template>
+            <template if:true={showMulesoftContent}>
+                <my-mulesoft-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-mulesoft-content>
+            </template>
+            <template if:true={showFlowContent}>
+                <my-flow-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-flow-content>
+            </template>
+            <template if:true={showMegaHackContent}>
+                <my-mega-hack-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-mega-hack-content>
+            </template>
+            <template if:true={showVonageContent}>
+                <my-vonage-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-vonage-content>
+            </template>
+        </div>
+    </template>
+    <div class="footer-spacer"></div>
+    <dx-footer></dx-footer>
+</template>

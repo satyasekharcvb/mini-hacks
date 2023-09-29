@@ -1,0 +1,73 @@
+<template>
+    <div class="right">
+        <img
+            src="https://sf-mini-hacks.herokuapp.com/resources/codey-wave.png"
+            class="right"
+            style="width: 150px; margin-right: 40px"
+        />
+    </div>
+    <div class="teambg slds-p-around_medium">
+        <div class="heading slds-text-heading_small itc">
+            Bonus stickers for teaming up <br /><small class="diff"
+                >Your teaming code: {attendeeCode}</small
+            >
+        </div>
+        <template if:false="{hasTeamMate}">
+            <div class="slds-m-top_small">
+                Team up with another Trailblazer to solve the mini hacks and
+                earn bonus stickers. Give your teaming code to your partner and
+                enter theirs here. Once you enter each other's teaming code, you
+                will be teamed up.
+                <div
+                    class="slds-grid slds-grid_align-center slds-m-top_x-small"
+                >
+                    <lightning-input
+                        type="text"
+                        placeholder="Your teammate's code"
+                        label="Code"
+                        variant="label-hidden"
+                        name="Code"
+                        class="code"
+                        required="true"
+                        onchange="{handleCodeChange}"
+                    ></lightning-input>
+                    <lightning-button
+                        label="Team up"
+                        variant="brand"
+                        class="slds-m-left_small"
+                        onclick="{handleClick}"
+                    ></lightning-button>
+                    <template if:true="{error}">
+                        <div class="red">{error}</div>
+                    </template>
+                </div>
+            </div>
+        </template>
+        <template if:true="{teamingInProgress}">
+            <div style="margin-top: 10px; margin-bottom: 10px">
+                Your Teammate: <span class="sec">{teammateName}</span>
+                <br />Teaming Status: <span class="sec">{status}</span> <br />
+            </div>
+            <div class="slds-m-top_x-small">
+                <lightning-button
+                    label="Refresh Teaming Status"
+                    variant="brand"
+                    class="slds-m-left_small"
+                    onclick="{handleRefreshClick}"
+                ></lightning-button>
+                <lightning-button
+                    label="Cancel Teaming request"
+                    variant="brand"
+                    class="slds-m-left_small"
+                    onclick="{handleCancelClick}"
+                ></lightning-button>
+            </div>
+        </template>
+        <template if:true="{teamingCompleted}">
+            <div style="margin-top: 10px; margin-bottom: 10px">
+                You have successfully teamed up with
+                <span class="sec">{teammateName}</span>
+            </div>
+        </template>
+    </div>
+</template>

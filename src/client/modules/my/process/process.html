@@ -1,0 +1,354 @@
+<template>
+    <div class="slds-p-around_small">
+        <template if:true={showDialog}>
+            <section
+                role="dialog"
+                tabindex="-1"
+                aria-modal="true"
+                aria-label="Modal popup"
+                class="slds-modal slds-backdrop slds-backdrop_open slds-modal_medium"
+            >
+                <div class="slds-modal__container">
+                    <div class="slds-modal__content">
+                        <img
+                            src="https://sf-mini-hacks.herokuapp.com/resources/PrizesDF23.png"
+                            class="slds-align_absolute-center image"
+                        />
+                    </div>
+
+                    <div class="slds-modal__footer slds-p-around_medium">
+                        <lightning-button
+                            label="Got it"
+                            variant="brand"
+                            onclick={handleOk}
+                            disabled={disableform1}
+                            class="slds-align_absolute-center"
+                        >
+                        </lightning-button>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <div class="slds-p-around_medium slds-m-bottom_large">
+            <lightning-progress-indicator
+                current-step={currentStep}
+                type="base"
+            >
+                <lightning-progress-step
+                    label="Complete 1 Mini Hack or the Mega Hack"
+                    value="1"
+                ></lightning-progress-step>
+                <lightning-progress-step
+                    label="Complete 2 Mini Hacks or the Mega Hack"
+                    value="2"
+                ></lightning-progress-step>
+                <lightning-progress-step
+                    label="Complete 4 Mini Hacks or the Vonage Hack or the Mega Hack"
+                    value="3"
+                ></lightning-progress-step>
+                <template if:true={allDone}>
+                    <lightning-progress-step
+                        label="All Done"
+                        value="4"
+                        class="slds-hide"
+                    ></lightning-progress-step>
+                </template>
+            </lightning-progress-indicator>
+            <div class="slds-progress slds-m-bottom_large slds-m-top_small">
+                <ol class="slds-progress__list itc">
+                    <div class="slds-text-align_center">
+                        Unlock Get Hands-on Quest stop
+                    </div>
+                    <div class="slds-text-align_center">
+                        Win an Apple AirTag
+                    </div>
+                    <div class="slds-text-align_center">
+                        Enter a chance to win an Apple iPad
+                    </div>
+                </ol>
+            </div>
+        </div>
+        <template if:true={attendeeObj}>
+            <lightning-tabset
+                class="tablabel itc"
+                active-tab-value={activeTab}
+            >
+                <lightning-tab
+                    label="Low Code (Mini)"
+                    class="tablabel"
+                    onactive={handleClick}
+                >
+                    <div
+                        class="slds-grid slds-gutters slds-grid_align-center slds-wrap slds-m-top_xx-large"
+                    >
+                        <!-- Vonage Start -->
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-5 tile"
+                            onclick={handleVonage}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_x-small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/VonageIcon.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_8_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    Vonage
+                                </h2>
+                            </article>
+                        </div>
+                        <!-- Vonage end -->
+
+                        <!-- SLACK START -->
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-5 tile"
+                            onclick={handleSlack}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/slack.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_1_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    Slack
+                                </h2>
+                            </article>
+                        </div>
+                        <!-- SLACK END -->
+
+                        <!-- TABLEAU START -->
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-5 tile"
+                            onclick={handleTableau}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/tableau1.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_2_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    Tableau
+                                </h2>
+                            </article>
+                        </div>
+                        <!-- TABLEAU END -->
+
+                        <!-- MULESOFT START -->
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-5 tile"
+                            onclick={handleMulesoft}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/mulesoft_logo.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_3_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    MuleSoft
+                                </h2>
+                            </article>
+                        </div>
+                        <!-- MULESOFT END -->
+
+                        <!-- FLOW START -->
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-5 tile"
+                            onclick={handleFlow}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/flow4.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_4_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    Flow
+                                </h2>
+                            </article>
+                        </div>
+                        <!-- FLOW END -->
+                    </div>
+                </lightning-tab>
+
+                <lightning-tab
+                    label="Pro Code (Mini)"
+                    class="tablabel"
+                    onactive={handleClick}
+                >
+                    <div
+                        class="slds-grid slds-gutters slds-grid_align-center slds-wrap slds-m-top_xx-large"
+                    >
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 tile"
+                            onclick={handleLWC}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/lwc.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_5_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    LWC
+                                </h2>
+                            </article>
+                        </div>
+
+                        <div
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 tile"
+                            onclick={handleCLI}
+                        >
+                            <article class="product">
+                                <div
+                                    class="product-icon violet slds-p-around_small"
+                                >
+                                    <img
+                                        src="https://sf-mini-hacks.herokuapp.com/resources/cli.png"
+                                        class="slds-p-around_small"
+                                    />
+                                    <template
+                                        if:true={attendeeObj.Challenge_6_completed__c}
+                                    >
+                                        <div class="icon">
+                                            <lightning-icon
+                                                icon-name="utility:success"
+                                                alternative-text="Approved"
+                                                title="Approved"
+                                                variant="success"
+                                            ></lightning-icon>
+                                        </div>
+                                    </template>
+                                </div>
+                                <h2
+                                    class="slds-text-heading_large slds-m-bottom_small slds-p-top_small itc slds-text-align_center"
+                                >
+                                    Apex
+                                </h2>
+                            </article>
+                        </div>
+                    </div>
+                </lightning-tab>
+                <lightning-tab
+                    label="Mega Hack"
+                    class="tablabel"
+                    onactive={handleMegaHack}
+                >
+                    <div
+                        class="slds-grid slds-gutters slds-grid_align-center slds-wrap slds-m-top_xx-large"
+                    >
+                        <p class="description slds-text-align_center">
+                            Solve this hack to unlock all the Mini Hack prizes
+                            at once
+                        </p>
+                    </div>
+                </lightning-tab>
+            </lightning-tabset>
+        </template>
+    </div>
+</template>

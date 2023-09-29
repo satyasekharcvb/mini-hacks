@@ -1,0 +1,24 @@
+<template>
+    <div class="lb">
+        <dx-card class="slds-m-bottom_x-large" heading="Most hacks completed">
+            <div class="fixTableHead">
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Trailblazer Name</th>
+                        <th>Hacks Completed</th>
+                    </tr>
+                    <template if:true={currentResult}>
+                        <template for:each={currentResult} for:item="item">
+                            <tr key={item.Id}>
+                                <td>{item.row_number}</td>
+                                <td>{item.Attendee_Full_Name__c}</td>
+                                <td>{item.Number_of_Hacks_Completed__c}</td>
+                            </tr>
+                        </template>
+                    </template>
+                </table>
+            </div>
+        </dx-card>
+    </div>
+</template>

@@ -1,0 +1,113 @@
+<template>
+    Rainy Beach Gym wants to develop its own weight training app for their
+    members to track their progress. No more notebooks and pencils! They want
+    each athlete to be able to track which exercises they completed, how much
+    weight they lifted, and how many times. This will allow athletes to see
+    their own progression and even casually compete with each other. <br />
+    Custom objects that will be installed in your org in next step:
+    <ul class="slds-list_dotted">
+        <li>Workout (PARENT)</li>
+        <ul class="slds-list_dotted">
+            <li>
+                Fields:
+                <ul class="slds-list_dotted">
+                    <li>Average Weight (average of sets from last workout)</li>
+                </ul>
+            </li>
+        </ul>
+        <li>Set (CHILD) A set is group of reps (repetitions)</li>
+        <ul class="slds-list_dotted">
+            <li>
+                Fields:
+                <ul class="slds-list_dotted">
+                    <li>Exercise picklist (deadlift, squat, bench press)</li>
+                    <li>
+                        Reps. One rep is a single time an athlete pics up a
+                        weight.
+                    </li>
+                    <li>Weight</li>
+                </ul>
+            </li>
+        </ul>
+    </ul>
+    For example: the weightlifting coach tells the class to do 3 sets of bench
+    press and 10 reps per set, for a total of 30 reps. Kyla will start her first
+    set with 27 kilos, and lift it 10 times. For her second set, she adds more
+    weight and is only able to lift it 8 times. She records 30 kilos and 8 reps.
+    She reduces the weight to 28 for set three, and is able to do all 10 reps
+    for the last three sets. Her goal was to complete 30 reps total, but she
+    actually completed 28. No big deal.
+    <br /><br />
+    <div class="dx-text-heading-5">Pre-Work</div>
+    <li>Log into your org.</li>
+    <li>
+        After you log into your org, 
+        <a
+            href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tHr000001NPCy"
+            >install this package</a
+        >. You can install for either All users or Admin users only.
+    </li>
+    <li>Go to the app called Weight Training.</li>
+    <li>If you can’t find it log out and log back in.</li>
+    <li>
+        Run the Setup flow that you’ll find in the utility bar in the bottom
+        left.
+    </li>
+    <li>Build your flow according to the requirements below.</li>
+    <br />
+    <div class="dx-text-heading-5">Requirements</div>
+    Build a screen flow.
+    <ul class="slds-list_dotted parent">
+        <li>
+            On the first screen, the athlete chooses one of three exercises,
+            enters the number of sets and number of reps that she intends to do.
+        </li>
+        <li>
+            The second screen needs to display text that says “Set 1” and the
+            athlete will enter the weight and number of reps actually completed.
+            Call this element “Set Screen".</li>
+            <li>Where the athlete enters weight, use a default weight: 
+            <ul class="slds-list_dotted parent">
+                <li>
+                    Display the average weight (a field on the Workout object)
+                    of the last workout of this exercise. Hint: sort by the DATE
+                    field not the Created Date Field. All your data will be
+                    created today.
+                </li>
+            </ul>
+        </li>
+        <li>
+            When the athlete hits next, the text will display “Set 2” and the
+            athlete will again enter the weight and number of reps actually
+            completed.
+        </li>
+        <li>
+            The athlete should see the Set screen for as many sets as she has.
+        </li>
+        <li>
+            Behind the scenes this flow will create a workout record and the
+            relevant number of set records.
+        </li>
+        <li>The default date for the sets and exercise is today’s date.</li>
+    </ul>
+    <div class="dx-text-heading-5">Test your Flow</div>
+    Enter the data for this scenario.
+    <br />
+    <p>
+        For example: the weightlifting coach tells the class to do 3 sets of
+        bench press and 10 reps per set, for a total of 30 reps. Kyla will start
+        her first set with 27 kilos, and lift it 10 times. For her second set,
+        she adds more weight and is only able to lift it 8 times. She records 30
+        kilos and 8 reps. She reduces the weight to 28 for set three, and is
+        able to do all 10 reps for the last three sets. Her goal was to complete
+        30 reps total, but she actually completed 28. No big deal.
+    </p>
+    <br />
+    <p>Screen 1: Bench Press, 3 sets, 10 reps per set.</p>
+    <p>Set 1: Weight 27, reps 10.</p>
+    <p>Set 2: Weight 30, reps 8.</p>
+    <p>Set 3: Weight 28, reps 10.</p>
+    <br />
+    To successfully complete this challenge, you’ll have 1 new workout record
+    created, with 3 set records attached to that workout with the data above.
+</template>

@@ -1,0 +1,150 @@
+.wrapper {
+    background: #ffff;
+}
+
+.lwczene {
+    --card-bg: white;
+}
+
+.button {
+    font-size: 20px;
+    line-height: 2 rem;
+    --sds-c-button-spacing-block-start: 5px;
+    --sds-c-button-spacing-block-end: 5px;
+}
+
+.title {
+    color: #032d60 !important;
+    font-weight: bold;
+}
+
+.requirements {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.rules {
+    line-height: 30px;
+}
+
+.container {
+    --one-third-width: calc((100% - 2 * var(--dx-g-page-grid-gap)) / 3);
+    display: grid;
+    gap: var(--dx-g-page-grid-gap);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .col-two,
+    .col-three,
+    .col-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .col-two-slim-left {
+        grid-template-columns: var(--one-third-width) calc(
+                2 * var(--one-third-width) + var(--dx-g-page-grid-gap)
+            );
+    }
+
+    .col-three {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .col-two-slim-right {
+        grid-template-columns:
+            calc(2 * var(--one-third-width) + var(--dx-g-page-grid-gap))
+            var(--one-third-width);
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-four {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.beginner {
+    --card-bg: #f9ebcd;
+}
+
+.intermedate {
+    --card-bg: #ebf7e6;
+}
+
+.hack1 {
+    --card-bg: #cfe9fe;
+}
+
+.hack2 {
+    --card-bg: #ebf7e6;
+}
+
+.hack3 {
+    --card-bg: #f9ebcd;
+}
+
+.hack4 {
+    --card-bg: #ece1f9;
+}
+
+.hack5 {
+    --card-bg: #ffded5;
+}
+
+.hack6 {
+    --card-bg: #def9f3;
+}
+
+.hack7 {
+    --card-bg: #ebf7e6;
+}
+
+.description {
+    min-height: 200px;
+}
+
+@media (max-width: 425px) {
+    .description {
+        max-height: 270px;
+        overflow: scroll;
+    }
+
+    /* .requirements {
+        max-height: 360px;
+    } */
+}
+
+.my-container {
+    max-width: 100rem;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 1000px;
+}
+
+@media (min-width: 64em) and (max-width: 85em) {
+    .slds-large-size--1-of-3,
+    .slds-large-size_1-of-3 {
+        width: 50%;
+    }
+}
+
+/* @media (min-width: 767px) and (max-width: 1023px) {
+    .requirements {
+        max-height: 425px;
+    }
+} */
+
+.sec {
+    color: #1c96ff;
+}
+
+.eqw {
+    width: 100%;
+}

@@ -1,0 +1,77 @@
+<template>
+    <ol class="slds-list_ordered">
+        <li>
+            This challenge requires
+            <ul class="slds-list_dotted">
+                <li>MuleSoft Composer for Salesforce.</li>
+                <li>
+                    <a href="http://sforce.co/2tnM5a7" target="_blank">
+                        Salesforce Platform Developer Edition Org</a
+                    >.
+                </li>
+                <li>
+                    Google Sheets. If you don't have a Google account, sign up
+                    for a
+                    <a
+                        href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"
+                        target="_blank"
+                    >
+                        free account</a
+                    >.
+                </li>
+            </ul>
+        </li>
+        <li>
+            One Google Sheet created called Marketing Leads with the following
+            columns
+            <ul class="slds-list_dotted">
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>Email</li>
+                <li>Phone</li>
+                <li>Industry</li>
+                <li>Country</li>
+                <li>Lead Source</li>
+            </ul>
+        </li>
+        <li>Solution must use MuleSoft Composer</li>
+        <li>
+            One MuleSoft Composer flow is created with the following three Steps
+            and one if/else
+            <ul class="slds-list_dotted">
+                <li>
+                    Step 1: A trigger on a <b>New Row</b> being created in a
+                    <b>Marketing Leads</b> spreadsheet from Google
+                </li>
+                <li>
+                    Step 2: A <b>Get records</b> action in for your connected
+                    Salesforce Developer Edition Org to look for
+                    <b>Lead</b>records matching on
+                </li>
+                <ul class="slds-list_dotted">
+                    <li>First Name = First Name from Google Sheet</li>
+                    <li>Last Name = Last Name from Google Sheet</li>
+                    <li>Email = Email from Google Sheet</li>
+                </ul>
+                <li>
+                    An If/Else check to see if there are matching records
+                    returned from the previous step
+                </li>
+                <li>
+                    Step 3: If the list returned <b>is empty</b> and no matching
+                    leads are found then <b>Create a new Lead</b> record setting
+                    a value for:
+                    <ul class="slds-list_dotted">
+                        <li>First Name = First Name from Google Sheet</li>
+                        <li>Last Name = Last Name from Google Sheet</li>
+                        <li>Email = Email from Google Sheet</li>
+                        <li>Phone = Phone from Google Sheet</li>
+                        <li>Industry = Industry from Google Sheet</li>
+                        <li>Country = Country from Google Sheet</li>
+                        <li>Lead Source = Lead Source from Google Sheet</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+</template>

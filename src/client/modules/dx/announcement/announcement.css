@@ -1,0 +1,31 @@
+.terms {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: var(--dx-g-font-sans);
+    font-size: var(--dx-g-text-xl);
+    font-weight: bold;
+    margin: var(--dx-g-spacing-md) 0;
+    background-color: #107cad;
+}
+
+.terms > span {
+    padding-right: var(--dx-g-spacing-lg);
+    color: white;
+}
+
+.feedback {
+    display: flex;
+    background: #107cad;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    /* background: repeating-linear-gradient(
+        45deg,
+        #107cad,
+        #107cad 20px,
+        #05628a 20px,
+        #05628a 30px
+    ); */
+}

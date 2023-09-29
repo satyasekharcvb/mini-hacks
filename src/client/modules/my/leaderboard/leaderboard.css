@@ -1,0 +1,40 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td,
+th {
+    border: 1px solid #260f8f;
+    text-align: left;
+    padding: 8px;
+    color: white;
+}
+
+td {
+    color: black;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background: #260f8f;
+}
+
+tr:nth-child(even) {
+    background-color: #e0e5f8;
+}
+
+tr:nth-child(odd) {
+    background-color: #9ea9f1;
+}
+
+.lb {
+    --card-height: 80vh;
+}
+
+.fixTableHead {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}

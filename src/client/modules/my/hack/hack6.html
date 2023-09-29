@@ -1,0 +1,63 @@
+<template>
+    Acme Inc. is a multi-national conglomerate dealing with customers across the
+    globe. Your Salesforce administrator has asked for a means to automatically
+    convert the Annual Revenue for each account to any of the supplied
+    currencies your organization recognizes (EUR, GBP, and JPY).
+    <br /><br />
+    As a developer for Acme Inc., you recognize that Salesforce already has the
+    capacity for managing multiple currencies and you simply need to create an
+    Apex class to perform those conversions. Your org is not configured for
+    this, nor does it have any idea what the current conversion rates are.
+    <br /><br />
+    You realize that this task requires several tasks to be completed.
+    <br /><br />
+    <div class="dx-text-heading-5">Requirements</div>
+    <ul class="slds-list_dotted">
+        <li>
+            You must activate multiple currencies in your Company settings to
+            allow for this flexibility
+        </li>
+        <li>Manage Currencies within your Company Settings.</li>
+        <li>
+            Use the following conversion rates:
+            <ul class="slds-list_dotted">
+                <li>EUR = 0.908</li>
+                <li>GBP = 0.773</li>
+                <li>JPY = 110.0</li>
+            </ul>
+        </li>
+        <li>
+            Create a new CurrencyConverter class for managing currency
+            conversions
+            <ul class="slds-list_dotted">
+                <li>
+                    Add a method to convertCurrencyWithApexCode that returns a
+                    Decimal value
+                </li>
+                <li>
+                    Ensure this method includes 3 arguments:
+                    <ul class="slds-list_dotted">
+                        <li>fromCurrency of type String</li>
+                        <li>toCurrency of type String</li>
+                        <li>amount of type Decimal</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Find the stored conversion rates in the CurrencyType object by
+            finding the
+            <ul class="slds-list_dotted">
+                <li>IsoCode = String value for the currency</li>
+                <li>
+                    ConversionRate = Decimal value of the conversion rate stored
+                </li>
+            </ul>
+        </li>
+        <li>
+            Test your results using the Anonymous Window within the Developer
+            Console You can use the Developer Console, Code Builder, or VSCode.
+            The choice is up to you.
+        </li>
+    </ul>
+</template>

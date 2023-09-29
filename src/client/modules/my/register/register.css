@@ -1,0 +1,33 @@
+html,
+body {
+    background-color: #eaf5fe;
+}
+.title {
+    color: #032d60;
+}
+
+.sec {
+    color: #1c96ff;
+}
+
+.imgshape {
+    display: none;
+}
+
+@media (min-width: 1360px) {
+    .imgshape {
+        position: absolute;
+        /* margin: 0 auto; */
+        /* border-radius: 35px; */
+        top: 0;
+        right: 0;
+        display: block;
+        border-radius: 50%;
+        border-top-right-radius: 0;
+        transform: translate(10%, -10%);
+    }
+}
+
+.spacer {
+    height: 10px;
+}

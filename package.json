@@ -1,0 +1,85 @@
+{
+    "name": "my-app",
+    "version": "0.0.1",
+    "bugs": "https://github.com/my-app/issues",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-basic-auth": "^1.2.1",
+        "express-sse": "^0.5.3",
+        "helmet": "^4.6.0",
+        "jsforce": "^1.9.3",
+        "lightning-base-components": "^1.12.3-alpha",
+        "patch-package": "^8.0.0",
+        "salesforce-jwt-bearer-token-flow": "^0.2.4"
+    },
+    "devDependencies": {
+        "@salesforce-ux/design-system": "^2.15.8",
+        "eslint": "^7.28.0",
+        "eslint-plugin-inclusive-language": "^2.1.1",
+        "husky": "^6.0.0",
+        "lint-staged": "^10.2.11",
+        "lwc-services": "^3.0.4",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.3.1"
+    },
+    "engines": {
+        "node": "16.2.0",
+        "npm": ">=6.4.1"
+    },
+    "homepage": "https://github.com/my-app",
+    "keywords": [
+        "lwc"
+    ],
+    "license": "MIT",
+    "lint-staged": {
+        "./src/**/*.js": [
+            "eslint"
+        ]
+    },
+    "lwc": {
+        "modules": [
+            {
+                "npm": "@lwce/router"
+            }
+        ]
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src/server/**/*.js"
+        ],
+        "ext": "js",
+        "ignore": [
+            "src/**/*.spec.js",
+            "src/**/*.test.js"
+        ],
+        "exec": "node ./src/server/api.js"
+    },
+    "repository": "my-app",
+    "scripts": {
+        "build": "lwc-services build -m production -w webpack.config.js",
+        "build:development": "lwc-services build",
+        "lint": "eslint ./src/**/*.js",
+        "postinstall": "husky install && patch-package",
+        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && npm run lint",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "prettier:lite": "prettier --write src/client/modules/my/hack/*.{js,html}",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "serve": "node src/server/api.js",
+        "serve:api": "node src/server/api.js",
+        "serve:client": "node scripts/server.js",
+        "test:unit": "lwc-services test:unit",
+        "test:unit:coverage": "lwc-services test:unit --coverage",
+        "test:unit:debug": "lwc-services test:unit --debug",
+        "test:unit:watch": "lwc-services test:unit --watch",
+        "watch": "run-p watch:client watch:server",
+        "watch:client": "lwc-services watch",
+        "watch:server": "nodemon"
+    },
+    "volta": {
+        "node": "16.2.0"
+    }
+}

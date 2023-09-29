@@ -1,0 +1,39 @@
+<template>
+    <div class={flipContainerClass}>
+        <div class="flipper">
+            <div class="front">
+                <div
+                    part="container"
+                    class="dx-card-news dx-card-base dx-card-size-normal dx-card-news-img-placement-bottom card-bg-front"
+                    style="color: var(--dx-g-blue-vibrant-20)"
+                >
+                    <div class="text small slds-text-align_center">
+                        <h3 class="heading itc">{heading}</h3>
+                        <p>{body}</p>
+                        <p>
+                            <slot></slot>
+                        </p>
+                        <div class="cta"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="back">
+                <div
+                    part="container"
+                    class="dx-card-news dx-card-base dx-card-size-normal dx-card-news-img-placement-bottom card-bg-back"
+                    style="color: var(--dx-g-blue-vibrant-20)"
+                >
+                    <div class="text small">
+                        <h3 class="heading itc slds-text-align_center">
+                            {heading}
+                        </h3>
+
+                        <slot name="requirements"></slot>
+
+                        <div class="cta"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</template>

@@ -1,0 +1,53 @@
+<template>
+    <!--<my-teammate attendee-code={attendeeCode} hack-number={hackNumber}></my-teammate>-->
+    <template if:true={hackCompleted}>
+        <h3 class="title itc">
+            <lightning-icon
+                icon-name="utility:check"
+                alternative-text="Approved"
+                title="Approved"
+                variant="success"
+            ></lightning-icon>
+            <br />
+            Congrats! You've completed this hack.
+        </h3>
+    </template>
+    <template if:false={hackCompleted}>
+        <template if:false={showKey}>
+            <div class="slds-m-top_large slds-m-bottom_large">
+                Once the hack is complete, <u>PLEASE CALL A STAFFER</u> to get
+                your hack verified. Unlike Trailhead, verification is not
+                automatic. A staffer will manually verify your hack.
+            </div>
+            <lightning-button
+                label="Don't click (STAFF ONLY)"
+                variant="destructive"
+                onclick={verify}
+            ></lightning-button>
+        </template>
+        <template if:true={showKey}>
+            <div class="mt2">
+                <lightning-input
+                    type="password"
+                    label="Super Secret Code"
+                    placeholder="Call a staffer to verify your hack MANUALLY"
+                    required="true"
+                    name="key"
+                    class="key slds-xx-small"
+                    onchange={handleKeyChange}
+                ></lightning-input>
+                <lightning-button
+                    label="Verify (STAFF ONLY)"
+                    variant="brand"
+                    onclick={completeHack}
+                ></lightning-button>
+            </div>
+            <template if:true={error}>
+                <div class="red">{error}</div>
+            </template>
+        </template>
+    </template>
+    <template if:true={showSpinner}>
+        <utils-spinner></utils-spinner>
+    </template>
+</template>

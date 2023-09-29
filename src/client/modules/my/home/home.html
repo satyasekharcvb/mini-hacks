@@ -1,0 +1,84 @@
+<template>
+    <template if:false={showLeaderboard}>
+        <template if:false={isRegistered}>
+            <div>
+                <img src="https://sf-mini-hacks.herokuapp.com/resources/Banner.png" />
+            </div>
+            <div class="spacer"></div>
+        </template>
+        <template if:true={isRegistered}>
+            <!--<div class="banner slds-text-align_center slds-p-around_medium">
+                <img src="resources/banner.png">
+                <div class="slds-text-heading_large heading itc">
+                    Welcome to Camp Mini Hacks
+                </div>
+                <div class="slds-text-heading_large slds-p-around_small slds-m-top_large subheading">
+                    Hello {attendeeName}, click on a hack to start hacking!
+                </div>
+                <div class="slds-m-top_large">
+                    <a href="https://www.surveymonkey.com/r/8WHKZK2" target="_blank">
+                        <lightning-button variant="neutral" label="Give Feedback" class="slds-m-right_small"></lightning-button>
+                    </a>
+                    <lightning-button variant="neutral" label="Logout" onclick={logout}></lightning-button>
+                </div>
+                <div class="spacer"></div>
+            </div>-->
+            <div class="slds-text-align_center">
+                <img src="https://sf-mini-hacks.herokuapp.com/resources/Banner.png" />
+                <div class="slds-text-align_right slds-p-around_medium">
+                    <a
+                        href="bit.ly/mhdf23feedback"
+                        target="_blank"
+                    >
+                        <lightning-button
+                            variant="brand-outline"
+                            label="Give Feedback"
+                            class="slds-m-right_small"
+                        ></lightning-button>
+                    </a>
+                    <lightning-button
+                        variant="brand-outline"
+                        label="Logout"
+                        onclick={logout}
+                    ></lightning-button>
+                </div>
+            </div>
+
+            <div
+                class="slds-text-heading_medium slds-text-align_center slds-p-around_small subheading"
+            >
+                <h3>Hello {attendeeName}, click on a hack to start hacking!</h3>
+            </div>
+        </template>
+
+        <div class="content slds-m-top_x-large">
+            <template if:false={isRegistered}>
+                <my-register
+                    onregistrationcomplete={handleRegComplete}
+                ></my-register>
+            </template>
+            <template if:true={isRegistered}>
+                <my-content
+                    attendee-id={attendeeId}
+                    attendee-name={attendeeName}
+                    attendee-obj={attendeeObj}
+                    attendee-code={attendeeCode}
+                ></my-content>
+            </template>
+        </div>
+    </template>
+    <template if:true={showLeaderboard}>
+        <div>
+            <img src="resources/leaderBoard.png" class = "lbBanner"/>
+        </div>
+        <div class="slds-p-around_x-large">
+            <div class="slds-grid slds-grid_align-center">
+                <div
+                    class="slds-col slds-size_1-of-1 slds-large-size_1-of-1 slds-small-size_1-of-1"
+                >
+                    <my-leaderboard></my-leaderboard>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

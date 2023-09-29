@@ -1,0 +1,62 @@
+.content-container_bottom {
+    display: flex;
+    /* background: #032D60; */
+    background: white;
+}
+
+.content-container {
+    padding: 0 var(--dx-g-page-padding-horizontal);
+}
+
+.terms {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: var(--dx-g-font-sans);
+    font-size: var(--dx-g-text-xs);
+    margin: var(--dx-g-spacing-md) 0;
+}
+
+.terms_links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.terms_links > *:not(:last-child) {
+    margin-right: var(--dx-g-spacing-lg);
+}
+
+/* .terms > span, */
+.terms_links > a {
+    /* margin: var(--dx-g-spacing-sm) 0; */
+    /*font-family: "SalesforceSansRegular";*/
+    font-size: 12px;
+}
+
+.terms a {
+    /* color: var(--dx-g-blue-vibrant-70); */
+    color: #181818;
+    background-color: #fff;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--dx-g-transition-hue-1x);
+}
+
+.terms > span {
+    padding-right: var(--dx-g-spacing-lg);
+    /* color: white; */
+    color: #032d60;
+}
+
+.terms > span > a {
+    display: inline;
+}
+
+.content-container {
+    margin: 0;
+}

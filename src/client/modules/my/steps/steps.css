@@ -1,0 +1,19 @@
+.wrapper {
+    background: #eaf5fe;
+}
+
+.slds-card {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    margin-top: 10px;
+    display: block;
+}
+
+@media (min-width: 1382px) {
+    .slds-large-size_1-of-4 {
+        width: 20%;
+    }
+}

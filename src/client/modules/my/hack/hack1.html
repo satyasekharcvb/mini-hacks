@@ -1,0 +1,291 @@
+<template>
+    You are assigned a task to create a workflow that automates the creation of
+    incidents. Your workflow also connects to an external service (Zoom) in a
+    no-code environment. Follow the instructions below to complete the hack.
+    <br /><br />
+    <div class="dx-text-heading-5">Pre-Work</div>
+    <ul class="slds-list_dotted">
+        <li>
+            The&nbsp;
+            <a
+                href="https://join.slack.com/t/dreamforcesla-7nk6454/shared_invite/zt-1zl4g9513-WvBEJ2A7CYJT~FIXYr52OQ"
+                target="_blank"
+            >
+                Dreamforce Slack Minihack&nbsp;</a
+            >
+            workspace
+        </li>
+        <li>
+            A Zoom account, a free account can be created on the
+            <a href="https://zoom.us/signup#/signup">&nbsp;Zoom website</a>
+        </li>
+    </ul>
+    <br />
+    <div class="dx-text-heading-5">Requirements</div>
+    <ul class="slds-list_dotted parent">
+        <li>
+            Introduction
+            <ul class="slds-list_dotted">
+                <li>
+                    Imagine there’s been a service outage at your company —
+                    something is broken and needs to be fixed immediately. You
+                    need to assemble your best people and resolve the emergency,
+                    so your customers can return to their regular day-to-day
+                    undisturbed. You will create a workflow within Slack that
+                    automates this process for you and also keeps a record of
+                    the incident so that you can use the information in a post
+                    mortem process and prevent future incidents.
+                </li>
+                <li>
+                    In this hack, you’ll be using the new and improved Workflow
+                    Builder, which is built right into Slack. Workflow Builder
+                    offers a set of tools to help you automate routine tasks and
+                    processes in Slack. Workflows can be as simple or as complex
+                    as you’d like, and can even be connected to other apps and
+                    tools you use to get work done. In this particular hack,
+                    you’ll be adding steps within your workflow that connect to
+                    third-party services like Zoom, an online video conference
+                    service, but first let’s take a look at what a workflow in
+                    Slack is.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Workflows vocabulary
+            <ul class="slds-list_dotted">
+                <li>
+                    <a
+                        href="https://slack.com/help/articles/16583775096083-What-is-a-Slack-workflow"
+                        target="_blank"
+                        >&nbsp;Workflows
+                    </a>
+                    &nbsp;are a set of
+                    <a
+                        href="https://slack.com/help/articles/17542172840595-Create-a-new-workflow-in-Slack/#add-steps-to-your-workflow-pre-ia"
+                        >&nbsp;steps&nbsp;
+                    </a>
+                    that automate routine tasks within Slack and are started by
+                    some kind of
+                    <a
+                        href="https://slack.com/help/articles/17542172840595-Create-a-new-workflow-in-Slack/#choose-a-trigger-pre-ia"
+                    ></a
+                    >. Some examples of t hese steps are: creating a channel,
+                    sending a message or even connecting with a third-party
+                    service. Triggers are events that can be found in and
+                    outside of Slack that start a workflow. An example of a
+                    trigger is when an emoji reaction added to a message, a
+                    person joins a channel or when a workflow link is pressed.
+                    Workflow links are a special type of trigger that when
+                    posted into Slack unfurls to reveal a start button. Pressing
+                    the start button will start the associated workflow. These
+                    links can be embedded into Canvas documents, added to a
+                    channel bookmark or be tossed around as a message and is the
+                    trigger that we’ll use in this particular hack.
+                </li>
+                <li>
+                    Now that you have an idea of what workflows are, let’s
+                    automate the process of creating incidents by using Workflow
+                    Builder.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Your incident workflow at a glance
+            <br />
+            <ul class="slds-list_dotted">
+                <li>
+                    Your incident workflow will consist of the following steps:
+                </li>
+                <ol class="slds-list_ordered">
+                    <li>
+                        A workflow link will start your workflow. Pressing on
+                        the “Start workflow” button will, Send the user a form
+                        that collects information about the incident.
+                    </li>
+                    <li>Next the workflow will,Create a Slack channel.</li>
+                    <li>
+                        Send “only-visible to me” message to let users know the
+                        workflow has been executed.
+                    </li>
+                    <li>
+                        Invite the incident responder to the newly created
+                        channel.
+                    </li>
+                    <li>Update the channel topic.</li>
+                    <li>Create a Zoom conference room.</li>
+                    <li>
+                        Include the Zoom room to the message being posted in
+                        channel
+                    </li>
+                    <li>
+                        And finally, pin the message to channel so folks can
+                        refer back to it.
+                    </li>
+                </ol>
+            </ul>
+            Seems like a lot of steps? Not to worry! Let’s take advantage of the
+            templates that you have at your disposal built right into Workflow
+            Builder. You’ll be making some modifications to customize it to your
+            liking.
+        </li>
+        <li>
+            Creating your very first workflow
+            <ul class="slds-list_dotted">
+                <li>
+                    First, let’s locate how to get to the Workflow Builder tool.
+                    Click on the workspace name in the top left corner and
+                    scroll down to <i>Tools</i> and select
+                    <i> Workflow Builder. </i> Once you do this, you should see
+                    a new window pop up. From here, click
+                    <i>Create Workflow</i> and then expand the templates sidebar
+                    by clicking <i>See all templates.</i> Lastly, choose the
+                    <i>Incident</i> Response template. With this, your
+                    foundation has been built.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Setting up your test environment
+            <ul class="slds-list_dotted">
+                <li>
+                    Since you’ll be working on a workspace with other
+                    colleagues, let’s take some steps to make sure you don’t
+                    pollute any of your main work channels. Create a new channel
+                    by clicking on the channels tab in the left sidebar. Name
+                    your channel something like incident- + a possible incident
+                    at your company + the date the incident occurred
+                    <i> e.g. incident-broken-sidebar-091222.</i> You don’t need
+                    to add anyone to this channel, as you’ll be using it just
+                    for yourself.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Customizing your workflow
+            <ul class="slds-list_dotted">
+                <li>
+                    Now that you’ve created your template, take some time to
+                    peruse the steps and understand what your workflow is
+                    automating. If you like, you can even test out your workflow
+                    now within your test channel by publishing it, posting the
+                    workflow link and c licking the start button.
+                </li>
+                <li>
+                    Let's add some of these customizations to make this workflow
+                    your own. Workflow links can live within a channel and a
+                    canvas, so it's nice to notify the user that the workflow
+                    has been started with a visual cue. For this, let's add an
+                    "only visible to you" message (aka an ephemeral message)
+                    right after the form step. You'll need to hover your mouse
+                    between the <i>Collect info in a form</i> and
+                    <i>Create channel steps </i> until you see a plus sign.
+                    Press the plus sign, choose <i>Messages</i>, and then Send
+                    an <i>"only visible to you" message </i>from the right-hand
+                    navigation. Here's where you can get creative and make the
+                    message sense! As a point of reference, you'll want to add
+                    details like the <i>Incident title</i> and
+                    <i>Short description</i>, which you can do by pressing the
+                    <i>Insert a variable </i>
+                    button in the bottom right. Also, you can choose who and
+                    where this message will be sent — choose what makes the most
+                    sense to you in the context of an incident. Think about what
+                    kind of information would be helpful to users kicking off
+                    this workflow.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Adding in third-party services
+            <ul class="slds-list_dotted">
+                <li>
+                    One of Workflow Builder’s strongest points is its ability to
+                    hook into other services — without the use of any code. In
+                    this case, once an incident has occurred, you want to swarm
+                    all in one place and discuss the best path for moving
+                    forward. For this, you will create a Zoom conference room.
+                </li>
+                <li>
+                    If you already have a Zoom account, perfect! If not, you’ll
+                    need to create one on the
+                    <a href="https://zoom.us/signup#/signup" target="_blank"
+                        >&nbsp;Zoom website</a
+                    >. A free trial account will suffice. Once you have your
+                    account ready, find the <i>Update the channel topic</i> step
+                    and click the plus sign after it and choose <i>Zoom</i> >
+                    <i>Create a meeting</i> from the right hand navigation.
+                    You’re welcome to choose all the variables that make sense
+                    to you — the answers from the form are a good place to
+                    start!
+                </li>
+                <li>
+                    Next, to make sure everyone knows which Zoom room discussion
+                    is taking place, add the Zoom URL to the message that is
+                    posted in channel. Head to the
+                    <i>Send a message to Channel name</i> and find the pencil
+                    icon in the top right corner. Within the message, let’s add
+                    “Zoom Room:” and then insert a variable linking the Zoom
+                    <i>Join URL</i>. And voila, you’re done!
+                </li>
+            </ul>
+        </li>
+        <li>
+            Publishing and testing our workflow
+            <ul class="slds-list_dotted">
+                <li>
+                    Before our workflow can be used in the wild, you’ll need to
+                    publish it first. In the top right corner of the workflow
+                    steps window, hit <i>Publish</i>. Remember to change the
+                    name of the workflow to include your name or something to
+                    make it unique!
+                </li>
+                <li>
+                    Next, copy the workflow link by hitting the
+                    <i>Copy Link</i> button and then choose one of the following
+                    places to post it:
+                    <ol class="slds-list_ordered">
+                        <li>As a message within a channel.</li>
+                        <li>As a bookmark within a channel.</li>
+                        <li>Within a Canvas, as part of a document.</li>
+                    </ol>
+                </li>
+                <li>
+                    Once you’ve decided this, hit the
+                    <i>Start Workflow</i>button and watch the magic happen!
+                </li>
+            </ul>
+        </li>
+        <li>
+            (Optional) Create a GitHub Issue by coding your own ste
+            <ul class="slds-list_dotted">
+                <li>
+                    If you’re looking to add steps outside of the ones that you
+                    see within Workflow Builder, you can do so by coding your
+                    very own step! This section is a quick overview of how you
+                    could do this for your app. You will be adding a step that
+                    creates an issue within GitHub.
+                </li>
+                <li>
+                    Head on over to the
+                    <a
+                        href="https://github.com/slack-samples/deno-github-functions"
+                    >
+                    &nbsp;deno-github-functions repository&nbsp;</a
+                    >
+                    and peruse through the code to get an idea of what this
+                    function does. Once you’re ready, follow the instructions
+                    within the README to get your very own GitHub function
+                    running. Note that once you get to the
+                    <i>Create a Link Trigger</i> step, you can skip it and
+                    immediately run the command <i>slack run</i>. Once you do
+                    this, head back to your workflow that you created above and
+                    add one final step by searching for the
+                    <i>Create GitHub issue</i> step that will be available under
+                    the name of the app that you created. After this has been
+                    added, publish your workflow and check if GitHub issues are
+                    created when your workflow runs! If so, you’ve successfully
+                    created your very own step!
+                </li>
+            </ul>
+        </li>
+    </ul>
+</template>

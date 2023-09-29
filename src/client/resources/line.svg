@@ -1,0 +1,26 @@
+<svg width="500" height="27.999999999999996" xmlns="http://www.w3.org/2000/svg" xmlns:undefined="http://www.serif.com/" clip-rule="evenodd" xml:space="preserve" version="1.1">
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1" transform="matrix(1 0 0 1 20.7747 2.45564e-11)">
+   <g id="Salesforce-Developers">
+    <g id="Homepage-Copy">
+     <g id="Code-Samples-Card">
+      <g id="Code-Samples-Artwork">
+       <g transform="matrix(1 0 0 1 0 97.8457)" id="Ground">
+        <g transform="matrix(1 0 0 -1 0 6.51852)" id="Rectangle">
+         <rect id="svg_2" stroke-width="0.5px" stroke="rgb(38,15,143)" fill="rgb(38,15,143)" height="1" width="214.302" y="89.95636" x="-1.03806"/>
+        </g>
+        <rect stroke-width="0.5px" stroke="rgb(38,15,143)" fill="rgb(38,15,143)" height="1" width="17.475" y="-84.43836" x="233.49894"  id="Rectangle1"/>
+        <rect stroke-width="0.5px" stroke="rgb(38,15,143)" fill="rgb(38,15,143)" height="1" width="8.278" y="-84.43836" x="219.70294"  id="Rectangle2"/>
+        <path stroke-width="0.5px" stroke="rgb(38,15,143)" fill-rule="nonzero" fill="rgb(38,15,143)" d="m254.19294,-80.75936c-1.777,0 -3.219,-1.441 -3.219,-3.219c0,-1.778 1.442,-3.219 3.219,-3.219c1.778,0 3.22,1.441 3.22,3.219c-0.002,1.777 -1.442,3.217 -3.22,3.219zm0,-5.551c-1.288,0 -2.332,1.044 -2.332,2.332c0,1.288 1.044,2.332 2.333,2.332c1.288,0 2.332,-1.044 2.332,-2.332c-0.002,-1.287 -1.045,-2.331 -2.333,-2.332z" id="Shape"/>
+        <path stroke-width="0.5px" stroke="rgb(38,15,143)" fill-rule="nonzero" fill="rgb(38,15,143)" d="m216.48394,-80.75936c-1.778,0 -3.22,-1.441 -3.22,-3.219c0,-1.778 1.442,-3.219 3.22,-3.219c1.777,0 3.219,1.441 3.219,3.219c-0.002,1.777 -1.442,3.217 -3.219,3.219zm0,-5.551c-1.289,0 -2.333,1.044 -2.333,2.332c0,1.288 1.045,2.332 2.333,2.332c1.288,0 2.332,-1.044 2.332,-2.332c-0.002,-1.287 -1.045,-2.331 -2.332,-2.332z"  id="Shape1"/>
+        <path stroke-width="0.5px" stroke="rgb(38,15,143)" fill-rule="nonzero" fill="rgb(38,15,143)" d="m230.27894,-80.75936c-1.777,0 -3.218,-1.441 -3.218,-3.219c0,-1.778 1.441,-3.219 3.219,-3.219c1.778,0 3.219,1.441 3.219,3.219c-0.002,1.777 -1.442,3.218 -3.22,3.219zm0,-5.551c-1.288,0 -2.332,1.044 -2.332,2.332c0,1.288 1.045,2.332 2.333,2.332c1.288,0 2.332,-1.044 2.332,-2.332c-0.002,-1.287 -1.045,-2.331 -2.333,-2.332z"  id="Shape2"/>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

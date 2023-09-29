@@ -1,0 +1,174 @@
+<template>
+    This is a basic overview of how to analyze data with Tableau. In this hack,
+    participants will create a
+    <a
+        href="https://help.tableau.com/current/pro/desktop/en-us/datasource_prepare.htm"
+        target="_blank"
+        >&nbsp;datasource&nbsp;</a
+    >
+    from a data file (CSV) and then build a simple dashboard. The dashboard will
+    consist of 4 charts (or Vizzes as we call them), and should more or less
+    have the same structure. <br /><br />
+    To do this, participants will login to our Tableau Server site and create a
+    new workbook. They will upload the data files using Web Authoring, and
+    create a dashboard that looks like this:
+    <img
+        src="https://sf-mini-hacks.herokuapp.com/resources/tableauDash.png"
+        class="slds-align_absolute-center slds-p-around_small"
+    />
+    The dataset consists of survey responses from airline passengers. Our goal
+    is to get a better understanding of what factors lead to people having a
+    high or low satisfaction rating, and what we can do to drive higher
+    satisfaction among our passengers.
+    <br />
+    <div class="dx-text-heading-5">Pre-work</div>
+    <ul class="slds-list_dotted">
+        <li>
+            Registration Form - Complete the form<a
+                href="https://df23-registration-app-9cffbb84f217.herokuapp.com/"
+                target="_blank"
+            >
+            &nbsp;here</a
+            >, which will create logins for this workshop’s Tableau Cloud site.
+            After the form is submitted, it will display your login information
+            and link to the Tableau Cloud site. Check your email for
+            instructions on how to set your password, before trying to login to
+            Tableau Cloud
+        </li>
+        <li>
+            Workshop Files - Download the data files needed for this mini hack
+            <br />
+            <a
+                href="https://dreamforce.s3.us-west-2.amazonaws.com/2023/airline_passenger_satisfaction.csv"
+                target="_blank"
+                >https://dreamforce.s3.us-west-2.amazonaws.com/2023/airline_passenger_satisfaction.csv</a
+            >
+        </li>
+    </ul>
+    <br />
+    <div class="dx-text-heading-5">Requirements</div>
+    <ul class="slds-list_dotted parent">
+        <li>
+            Create a new Workbook.<br />Use Tableau Cloud to create a new
+            workbook, and upload the
+            <i>airline_passenger_satisfaction.csv</i> file as your data source.
+        </li>
+        <li>
+            Viz 1: What kind of passengers are not satisfied - The 1st question
+            we want to answer is what kind of passengers are most likely to be
+            not satisfied with their travel experience? Start by creating a new
+            calculated field named [# Passengers], using the following formula:
+            <code class="language-js"
+                >COUNT([airline_passenger_satisfaction.csv]).</code
+            >
+            and drag it onto columns. Next, drag [Type of Travel] and
+            [Satisfaction] to rows.
+            <p>
+                In order to add [Customer Type] as the color but keep the label
+                at the end of each bar, there is a trick. Add [# Passengers] a
+                second time to the Columns shelf (should be there twice). Click
+                on one of the [# Passengers] fields in the Columns shelf and
+                change it to a dual-axis chart. The chart will now have axis on
+                both the top and bottom, so click on the top axis and make sure
+                the Synchronize Axis option is checked, and then uncheck the
+                Show Header option.
+            </p>
+            <p>
+                You should now see 2 sections under the Marks shelf, so add
+                [Customer Type] to the Color of the lower section. On the upper
+                section, add [# Passengers] to the Label and then click on it to
+                add a Quick Table Calculation for Percent of Total. Your chart
+                should now look like the image below
+            </p>
+            <img
+                src="https://sf-mini-hacks.herokuapp.com/resources/TabViz1.png"
+                class="slds-align_absolute-center slds-p-around_small"
+            />
+        </li>
+        <li>
+            Viz 2: Explain Data - Based on the Viz we just finished, we can see
+            that business travel is pretty split between satisfaction but
+            personal travel has a much wider gap between satisfied and not
+            satisfied passengers. In order to understand why this gap exists,
+            let’s use Explain Data. Click on the bar for Personal + Not
+            Satisfied and click on the Data Guide button. This will pop out the
+            Data Guide panel, which has a section for Explanations related to
+            the mark your selected. Click on the button labeled
+            <code class="language-js">[High] # Passengers</code> to see possible
+            explanations for why this value might be high. If you expand the
+            section for In-flight Wifi Service, you should see a thumbnail of a
+            new chart. Click the Open in Worksheet button to create this Viz
+            automatically.
+            <p>
+                This Viz shows each combination of [Customer Type], [Type of
+                Travel], & [Satisfaction], and the selected (blue) mark
+                represents returning customers who are on personal travel and
+                were not satisfied. Change the mark type from Circle to Shape
+                and drag [Satisfaction] to shape. Now you can see why wifi
+                service is such a significant indicator for poor satisfaction,
+                as all the satisfied passengers had higher wifi service scores.
+            </p>
+            <img
+                src="https://sf-mini-hacks.herokuapp.com/resources/TabViz2.png"
+                class="slds-align_absolute-center slds-p-around_small"
+            />
+        </li>
+        <li>
+            Viz 3: Wifi Scores vs Satisfaction - Now that we know how important
+            wifi service is, where do we need to get to in order to convert not
+            satisfied passengers to satisfied? Create a new sheet, and switch
+            the mark type to Radial. The Level icon only accepts dimensions (not
+            measures), so click on [In-flight Wifi Service] and click the
+            Convert to Dimension button. Drag [In-flight Wifi Service] and
+            [Satisfaction] to Level, and [# Passengers] to the Angle. This will
+            create a radial chart with Wifi service scores on the inside, and
+            what % of passengers are satisfied/not satisfied. There’s a tiny
+            slice for scores of 0, but it’s so small that it can be distracting
+            so filter that value out. This shows that when the scores are 4-5,
+            the % of Satisfied passengers goes way up. Scores between 2-3,
+            however, show ~75% of passengers are not satisfied.
+            <img
+                src="https://sf-mini-hacks.herokuapp.com/resources/TabViz3.png"
+                class="slds-align_absolute-center slds-p-around_small"
+            />
+        </li>
+        <li>
+            Viz 4: Does age matter when comparing Wifi service and satisfaction?
+            - The last question we should ask is does this realization (that low
+            wifi scores correlates to low satisfaction), apply to everyone or
+            just a specific demographic? We should check to see if this applies
+            more to younger or older passengers. Create a new sheet and change
+            the mark type to Sankey. Drag [Satisfaction] and [In-flight Wifi
+            Service] to Levels, and [# Passengers] to Link. This shows a similar
+            view to the Radial chart we created in the last step, but let’s add
+            Age to the mix.
+            <p>
+                Since [Age] is the exact age of passengers, we should bin these
+                values to make the analysis a bit easier to view. Click on the
+                [Age] field and click Create → Bin. Tableau will suggest a bin
+                size based on the range of values in that field, but let’s round
+                up to an even number like 10. Now drag the new [Age (bin)] field
+                to Level, and you should see a Viz like the image below. There
+                were a few dimensions with a small # of passengers (Wifi Service
+                = 0, Age (bin) = 0, 70, 80), so feel free to filter them out.
+            </p>
+            <img
+                src="https://sf-mini-hacks.herokuapp.com/resources/TabViz4.png"
+                class="slds-align_absolute-center slds-p-around_small"
+            />
+            <p>
+                By looking at the links between Wifi Service scores of 2 & 3 for
+                Not Satisfied passengers, the largest links are for 20-30 year
+                olds and 30-40 year olds. This means we can focus on improving
+                the wifi service score for this specific demographic, perhaps by
+                looking at how they use wifi on flights and seeing what we can
+                do.
+            </p>
+        </li>
+        <li>
+            Dashboard: Passenger Satisfaction Analysis - The last step is to
+            combine the Vizzes into a single interactive dashboard. Publish the
+            dashboard to the [Minihacks] project, and you’re done!
+        </li>
+    </ul>
+</template>

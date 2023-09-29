@@ -1,0 +1,17 @@
+<template>
+    <div
+        part="container"
+        class="dx-card-news dx-card-base dx-card-size-normal dx-card-news-img-placement-bottom"
+        style="
+            background-color: var(--dx-g-cloud-blue-vibrant-90);
+            color: var(--dx-g-blue-vibrant-20);
+        "
+    >
+        <div class="text small">
+            <h3 class="dx-text-heading-3">{heading}</h3>
+            <p>{body}</p>
+            <p><slot></slot></p>
+            <div class="cta"></div>
+        </div>
+    </div>
+</template>

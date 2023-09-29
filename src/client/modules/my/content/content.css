@@ -1,0 +1,157 @@
+.title {
+    color: #032d60 !important;
+    font-weight: bold;
+}
+
+.footer-spacer {
+    height: 100px;
+    position: fixed;
+}
+
+.requirements {
+    font-size: 15px;
+    line-height: 30px;
+    max-height: 465px;
+    overflow-y: scroll;
+}
+
+.rules {
+    line-height: 30px;
+}
+
+.container {
+    --one-third-width: calc((100% - 2 * var(--dx-g-page-grid-gap)) / 3);
+    display: grid;
+    gap: var(--dx-g-page-grid-gap);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .col-two,
+    .col-three,
+    .col-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .col-two-slim-left {
+        grid-template-columns: var(--one-third-width) calc(
+                2 * var(--one-third-width) + var(--dx-g-page-grid-gap)
+            );
+    }
+
+    .col-three {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .col-two-slim-right {
+        grid-template-columns:
+            calc(2 * var(--one-third-width) + var(--dx-g-page-grid-gap))
+            var(--one-third-width);
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-four {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.hack1 {
+    --card-bg: #cfe9fe;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg1.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/astro1.png);
+}
+
+.hack2 {
+    --card-bg: #ebf7e6;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg2.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/appy1.png);
+}
+
+.hack3 {
+    --card-bg: #f9ebcd;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg3.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/codey1.png);
+}
+
+.hack4 {
+    --card-bg: #ece1f9;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg1.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/blaze1.png);
+}
+
+.hack5 {
+    --card-bg: #ffded5;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg2.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/mule1.png);
+}
+
+.hack6 {
+    --card-bg: #def9f3;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg3.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/einstein1.png);
+}
+
+.hack7 {
+    --card-bg: #ebf7e6;
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/blaze1.png);
+}
+.hack9 {
+    --card-bg: #ffded5;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg2.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/mule1.png);
+}
+.hack10 {
+    --card-bg: #ffded5;
+    --card-bg-img: url(https://sf-mini-hacks.herokuapp.com/resources/bg2.png);
+    --card-char-img: url(https://sf-mini-hacks.herokuapp.com/resources/mule1.png);
+}
+
+.description {
+    min-height: 200px;
+}
+
+@media (max-width: 425px) {
+    .description {
+        max-height: 270px;
+        overflow: scroll;
+    }
+
+    .requirements {
+        max-height: 360px;
+    }
+}
+
+.my-container {
+    max-width: 100rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 64em) and (max-width: 85em) {
+    .slds-large-size--1-of-3,
+    .slds-large-size_1-of-3 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    .requirements {
+        max-height: 425px;
+    }
+}
+
+.sec {
+    color: #2e844a;
+}
+
+.code {
+    color: #551cff;
+    border-style: solid;
+}

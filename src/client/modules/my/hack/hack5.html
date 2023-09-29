@@ -1,0 +1,152 @@
+<template>
+    While having plants at home is lovely and helps fight climate change, taking
+    care of plants can be sometimes hard. That’s why <a
+        href="https://github.com/developerforce/tdx23-lwc-hack"
+        target="_blank"
+    >this repo</a> contains an app
+    that allows users to keep track of their plants and the care that they need
+    in Salesforce. Let’s become greener 🌿!
+    <br /><br />
+    Here comes your challenge! The list of species in the system can be long,
+    and the user experience team has suggested that you, our awesome developer,
+    add an input that allows filtering them.
+    <br /><br />
+    <div class="dx-text-heading-5">Pre-work</div>
+    
+    <ul class="slds-list_dotted parent">
+        <li>
+            To complete this mini hack, you can use any org of your choice.
+        </li>
+        <li>
+            In the org that you chose or created, deploy the existing plant tracker app from <a
+                href="https://github.com/developerforce/tdx23-lwc-hack"
+                target="_blank"
+            >this repo</a>, using Code Builder or VS Code.
+            <ul class="slds-list_dotted">
+                <li>
+                    If you are planning to use Code Builder, 
+                    <ul class="slds-list_dotted">
+                        <li>Install Code Builder <a
+                            href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t6g000008b1LIAAY"
+                        >
+                            using this URL.</a
+                        ></li>
+                        <li>
+                            Open Code Builder from App launcher. When you’re prompted to link a
+                            repo, link <a
+                                href="https://github.com/developerforce/tdx23-lwc-hack"
+                                target="_blank"
+                                >https://github.com/developerforce/tdx23-lwc-hack</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    If you are planning to use VS Code, 
+                    <ul class="slds-list_dotted">
+                        <li>Create a folder on the Desktop with your name.</li>
+                        <li>Using Terminal, navigate or <code class="language-js">cd</code> into the folder you created.</li>
+                        <li>Clone the repo using the following command
+                            <pre class="language-js">git clone https://github.com/developerforce/tdx23-lwc-hack</pre>
+                        </li>
+                        <li>Open the cloned repo in VS Code.</li>
+                        <li>Authorize an org of your choice using CLI commands or the command palette.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            In the terminal of VS Code or Code Builder, execute the following command. This will
+            give you access to the app that you’ll work with, load some sample
+            data, and retrieve the metadata files you’ll work
+            with.
+            <br />
+            <pre class="language-shell">./setup.sh</pre>
+            <p>
+                Check everything is fine by opening the app called “My Plants”,
+                going to the “Species Explorer” tab, and verifying you see this:
+            </p>
+            <img src="https://sf-mini-hacks.herokuapp.com/resources/lwc1.png" style="max-width:100%;"/>
+            <br />
+        </li>
+    </ul>
+
+    <div class="dx-text-heading-5">Requirements</div>
+    <div>
+        The business requirement says “When a user types a value on a filter
+        input, the <code class="language-shell">speciesList</code> component will show plants whose
+        <code class="language-shell">Name</code> or <code class="language-shell">Description__c</code> contains the typed
+        value”. There are two additional conditions:
+        <ul class="slds-list_dotted">
+            <li>
+                The <code class="language-shell">speciesList</code> component should only change when
+                the user has typed at least 3 characters.
+            </li>
+            <li>
+                The returned species by filter value must be cached, to
+                implement the page performance.
+            </li>
+        </ul>
+    </div>
+    <br/>
+    <p>This is how the page needs to look like, with the new filter input:</p>
+    <img src="https://sf-mini-hacks.herokuapp.com/resources/lwc2.png" style="max-width:100%;"/>
+    <br />
+    <p>The rough steps to complete this challenge are:</p>
+   
+        
+    <ul class="slds-list_dotted parent">
+        <li>
+            Create the filter using the <code class="language-shell">lightning-input</code> base
+            component. <a
+                href="https://developer.salesforce.com/docs/component-library/overview/components"
+                target="_blank"
+            >
+                Here is a link </a
+            > to the base component library.
+        </li>
+        <li>
+            Import the existing Apex method <code class="language-shell">getFilteredSpecies</code> from the <code class="language-shell">SpeciesService</code> class into the
+            <code class="language-shell">speciesList</code> component, instead of the one that's
+            being used. Check out the <a
+                href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.apex"
+                target="_blank"
+                >documentation
+            </a> if you don’t know how to do it.
+        </li>
+        <li>
+            Invoke <code class="language-shell">getFilteredSpecies</code> passing in the value that
+            the user types on the <code class="language-shell">lightning-input</code> component.
+            Remember this should only happen if the user wrote at least 3
+            characters, and that filtered species must be cached.
+        </li>
+        
+    </ul>
+    
+    <p>
+        Tip: If you don’t know how to deploy the code, try using <a
+            href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_source.htm"
+            target="_blank"
+        >
+            source commands
+        </a> on the Code Builder terminal. Alternatively, you can also use VS Code Salesforce extension
+        pack commands that show up on the command palette or when right clicking
+        a file. 
+        <br/>
+        Remember in source tracked orgs (such as scratch orgs) you can
+        use <code class="language-shell">push</code> and <code class="language-shell">pull</code>, while in non source tracked orgs (such as developer
+        orgs) you’ll have to use <code class="language-shell">deploy</code> and <code class="language-shell">retrieve</code>.
+        <br /><br />
+        Good luck with this green & sustainable challenge!
+    </p>
+    <br />
+    <div class="dx-text-heading-5">Cleanup (Only after a staffer verifies your work)</div>
+    Once a staffer verifies your hack, make sure you 
+    <ul class="slds-list_dotted">
+        <li>Log out of your org on the browser.</li>
+        <li>Delete the folder/directory you created that contains the SFDX project.</li>
+        <li>Log out from authorized orgs using the below command.
+            <pre class="language-shell">sfdx auth:logout -a -p</pre>
+        </li>
+    </ul>
+</template>

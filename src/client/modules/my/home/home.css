@@ -1,0 +1,41 @@
+.banner {
+    /* background-color: #2F2CB7;*/
+    background-image: linear-gradient(to right, #2f2cb7, #7526e3);
+}
+
+.spacer {
+    height: 30px;
+}
+
+.footer-spacer {
+    height: 50px;
+}
+
+.section {
+    min-height: 55vh;
+}
+
+.heading {
+    color: #3e0099;
+    font-size: 52px;
+}
+
+.subheading {
+    color: #3e0099;
+}
+.prizes {
+    color: #90d0fe;
+}
+
+.terms-conditions {
+    font-size: 11px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 160px;
+    margin-bottom: 15px;
+}
+.lbBanner {
+    width: 1450px;
+}

@@ -1,0 +1,13 @@
+diff --git a/node_modules/salesforce-jwt-bearer-token-flow/lib/jwt.js b/node_modules/salesforce-jwt-bearer-token-flow/lib/jwt.js
+index a924a90..b958a38 100644
+--- a/node_modules/salesforce-jwt-bearer-token-flow/lib/jwt.js
++++ b/node_modules/salesforce-jwt-bearer-token-flow/lib/jwt.js
+@@ -25,7 +25,7 @@ module.exports = class Jwt {
+                     "iss": this.iss, 
+                     "sub": this.sub, 
+                     "aud": this.aud,
+-                    "exp": Math.floor(Date.now() / 1000) + (60 * 5)
++                    "exp": Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 5)
+                 }
+             ,   encoded_JWT_Header = base64url(JSON.stringify(header))
+             ,   encoded_JWT_Claims_Set = base64url(JSON.stringify(claimsSet))

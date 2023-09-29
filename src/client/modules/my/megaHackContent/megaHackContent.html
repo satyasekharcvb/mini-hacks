@@ -1,0 +1,92 @@
+<template>
+    <div class="slds-p-around_medium wrapper">
+        <div
+            class="slds-m-top_x-large slds-m-bottom_x-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Mega Hack</b>
+        </div>
+
+        <div
+            class="slds-m-bottom_xx-large slds-text-align_center slds-text-heading_medium title"
+        >
+            You'll be using Flows, Lightning Web Components, Apex, and Slack
+            actions in Flows to complete the Mega Hack.
+        </div>
+
+        <div
+            class="slds-grid slds-grid_align-center slds-wrap slds-gutters slds-m-bottom_x-large showhack"
+        >
+            <dx-card
+                class="slds-m-bottom_x-large beginner slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Track and visualize your expenses"
+                started="true"
+            >
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="7"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack7.completed}
+                        hack-number="7"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+        </div>
+
+        <div
+            class="slds-m-top_xx-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Helpful Resources</b>
+        </div>
+
+        <div
+            class="slds-align_absolute-center slds-m-bottom_x-large slds-text-align_center slds-text-heading_small"
+            style="line-height: 30px; margin-top: 25px"
+        >
+            <ul class="slds-list_dotted slds-text-align_left">
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://help.salesforce.com/s/articleView?id=sf.dev_objectcreate_task_lex_from_spreadsheet.htm&type=5"
+                        target="_blank"
+                        >Custom Object from Spreadsheet feature
+                    </a>
+                </li>
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_config_for_flow_screens"
+                        target="_blank"
+                        >Create flow screen components
+                    </a>
+                </li>
+                <li>
+                    <i>Trailblazer Blog:</i>&nbsp;<a
+                        href="https://www.salesforcelwc.in/use-lwc-in-flows.html"
+                        target="_blank"
+                        >Create LWC for flow screens
+                    </a>
+                </li>
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://www.chartjs.org/docs/latest/"
+                        target="_blank"
+                        >Chart.js library
+                    </a>
+                </li>
+                <li>
+                    <i>Sample Code:</i>&nbsp;<a
+                        href="https://github.com/trailheadapps/lwc-recipes/"
+                        target="_blank"
+                        >LWC Recipes
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

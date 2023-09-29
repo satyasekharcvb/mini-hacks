@@ -1,0 +1,92 @@
+<template>
+    In this mega hack, you build an app that lets you track your expenses and
+    visualize them. You will be using a combination of Custom Objects, Flows,
+    Lightning Web Components, and Apex to complete this hack.
+    <br /><br />
+    <div class="dx-text-heading-5">Requirements</div>
+    <ul class="slds-list_dotted">
+        <li>
+            Create an object to store expenses and load the data from the below
+            CSV file into the object.
+            <ul class="slds-list_dotted">
+                <li>
+                    CSV file:
+                    <a
+                        href="https://sf-mini-hacks.herokuapp.com/resources/Mock_Expense_Data.csv"
+                        >&nbsp;Mock Expense Data.csv</a
+                    >
+                </li>
+                <li>
+                    Hint: Use the
+                    <a
+                        href="https://help.salesforce.com/s/articleView?id=sf.dev_objectcreate_task_lex_from_spreadsheet.htm&type=5"
+                        target="_blank"
+                    >
+                    &nbsp;Custom Object from Spreadsheet&nbsp;
+                    </a>
+                    feature.
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            Create a flow that lets users select a Start Date and an End Date on
+            the first screen, both of which are required.
+        </li>
+        <li>
+            The next screen must show a Lightning Web Component that displays a
+            donut chart using the
+            <a href="https://www.chartjs.org/docs/latest/" target="_blank"
+                >&nbsp;Chart.js library</a
+            >. You can download
+            <a
+                href="https://github.com/trailheadapps/lwc-recipes/blob/main/force-app/main/default/staticresources/chartJs.js"
+                target="_blank"
+                >&nbsp;chartJS.js&nbsp;</a
+            >
+            file from LWC Recipes. The donut chart must show the Total amount
+            spent grouped by Expense Type for the duration selected in the
+            previous screen.
+            <ul class="slds-list_dotted">
+                <li>
+                    <i
+                        >Hint: Refer to the
+                        <a
+                            href="https://github.com/trailheadapps/lwc-recipes/tree/main/force-app/main/default/lwc/libsChartjs"
+                            target="_blank"
+                            >&nbsp;libsChartjs recipe&nbsp;</a
+                        >
+                        for guidance on using the Chart.js library</i
+                    >
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            The component must also display a button called “Save as Image” that
+            saves the chart as an image in Salesforce Files, with the name
+            <code class="language-js">Expenses-[startdate]-[enddate].png</code>.
+            Use the format <code class="language-js">yyyy_MM_dd</code> for the
+            dates in the name of the image.
+            <ul class="slds-list_dotted">
+                <li>
+                    <i
+                        >Hint: Use the built-in
+                        <a
+                            href="https://www.chartjs.org/docs/latest/developers/api.html#tobase64image-type-quality"
+                            target="_blank"
+                            >&nbsp;toBase64Image&nbsp;</a
+                        >
+                        function of the Chart.js library</i
+                    >
+                </li>
+                <li>
+                    <i
+                        >Hint: Use the ContentVersion object to store the image
+                        in Salesforce Files.</i
+                    >
+                </li>
+            </ul>
+        </li>
+    </ul>
+</template>

@@ -1,0 +1,118 @@
+:host {
+    --sds-c-tabs-item-spacing-inline: 1.1rem;
+}
+
+.footer-spacer {
+    height: 120px;
+}
+
+.product-icon {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    background-color: #cfe9fe;
+    margin: 0 auto;
+}
+
+.orange {
+    background-color: #fef1ed;
+}
+
+.green {
+    background-color: #cdefc4;
+}
+
+.violet {
+    /*background-color: #BEC7F6;*/
+    background-color: #cfe9fe;
+}
+
+.blue {
+    background-color: #cfe9fe;
+}
+
+.yellow {
+    background-color: #fbf3e0;
+}
+
+.white-font {
+    color: white;
+}
+
+.slds-card__header {
+    font-family: 'ITC Avant Garde Gothic W05';
+}
+
+img {
+    width: 100%;
+}
+
+.tableauimg {
+    min-height: 150%;
+    min-width: 150%;
+}
+
+.body {
+    text-align: left;
+}
+
+.product:hover {
+    cursor: pointer;
+}
+
+.product:hover .product-icon {
+    background-color: #fff;
+}
+
+.active .product-icon {
+    background-color: #fff;
+    border: 2px solid #032d60;
+}
+
+.slds-card:hover::after {
+    /*content: 'Click to get started';*/
+    font-size: medium;
+    font-weight: bold;
+    color: #032d60;
+    font-family: 'SalesforceSans-Regular';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    text-align: center;
+}
+
+.tablabel {
+    font-size: 24px;
+    color: #032d60;
+}
+
+.itc {
+    color: #032d60;
+}
+
+.slds-progress ol li {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    align-items: center;
+}
+
+.icon {
+    position: relative;
+    top: -125px;
+    right: -80px;
+}
+
+.description {
+    font-size: 18px;
+    color: #032d60;
+}
+
+.tile {
+    margin-bottom: 5rem;
+}
+
+.slds-progress__item.slds-is-completed .slds-progress__marker_icon {
+    color: green;
+}

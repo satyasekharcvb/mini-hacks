@@ -1,0 +1,16 @@
+# OS artifacts
+.DS_STORE
+.DS_Store
+
+# Tools artifacts
+node_modules
+
+# Builds
+__lwr_cache__/*
+build/*
+__generated_site_*
+dist
+
+.env
+
+**/private.pem

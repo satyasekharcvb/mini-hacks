@@ -1,0 +1,64 @@
+<template>
+    <div class="slds-p-around_medium wrapper">
+        <div
+            class="slds-m-top_xx-large slds-m-bottom_x-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Apex Hack</b>
+        </div>
+
+        <div
+            class="slds-grid slds-grid_align-center slds-wrap slds-gutters slds-m-bottom_x-large showhack"
+        >
+            <dx-card
+                class="slds-m-bottom_x-large beginner slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Build a Currency Converter Using Apex and Salesforce Multiple Currency Settings"
+                started="true"
+            >
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="6"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack6.completed}
+                        hack-number="6"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+        </div>
+
+        <div
+            class="slds-m-top_xx-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Helpful Resources</b>
+        </div>
+
+        <div
+            class="slds-align_absolute-center slds-m-bottom_x-large slds-text-align_center slds-text-heading_small"
+            style="line-height: 30px; margin-top: 25px"
+        >
+            <ul class="slds-list_dotted slds-text-align_left">
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://help.salesforce.com/s/articleView?id=sf.admin_enable_multicurrency.htm&type=5"
+                        target="_blank"
+                        >Multiple Currencies
+                    </a>
+                </li>
+                <li>
+                    <i>Documentation:</i>&nbsp;<a
+                        href="https://help.salesforce.com/s/articleView?language=en_US&id=sf.admin_currency.htm&type=5"
+                        target="_blank"
+                        >Managing Multiple Currencies
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

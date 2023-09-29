@@ -1,0 +1,137 @@
+<template>
+    You are assigned the task of creating a To-Do app to manage tasks. You can
+    start by designing the API Specification. You would usually create this
+    specification using either
+    <a href="https://raml.org/" target="_blank">&nbsp;RAML</a> or
+    <a href="https://swagger.io/specification/" target="_blank">&nbsp;OAS</a>.
+    However, because you are on a time crunch and are not very familiar with
+    these languages, you decide to use MuleSoft for this. MuleSoft provides a
+    graphical user interface (GUI) in Anypoint Platform to complete this
+    specification using clicks, not code.
+    <br />
+    <br />
+    <div class="dx-text-heading-5">Requirements</div>
+    <ul class="slds-list_dotted parent">
+        <li>
+            Internet Browser - We recommend using Google Chrome to open Anypoint
+            Platform.
+        </li>
+        <li>
+            Anypoint Platform free account - We can create a free Anypoint
+            Platform account using any browser to start designing our API
+            specification. You can sign up
+            <a href="https://anypoint.mulesoft.com/login/signup" target="_blank"
+                >&nbsp;here</a
+            >.
+        </li>
+        <li>
+            Create a new API Specification using the visual interface to
+            generate either RAML or OAS automatically.
+        </li>
+        <li>
+            The API should accept the JSON media type (in the Summary page).
+        </li>
+        <li>
+            Create a To-Do data type that includes the following properties:
+            <img src="https://sf-mini-hacks.herokuapp.com/resources/muleReq1.png" />
+        </li>
+        <li>Create a /todos resource with the following details:</li>
+        <ul class="slds-list_dotted">
+            <li>
+                GET method:
+                <ul class="slds-list_dotted">
+                    <li>Response</li>
+                    <ul class="slds-list_dotted">
+                        <li>Status: 200 - OK</li>
+                        <li>Body Type: Array</li>
+                        <li>Body Items Type: To-Do</li>
+                    </ul>
+                    <li>
+                        Query Parameters:
+                        <img src="https://sf-mini-hacks.herokuapp.com/resources/muleReq2.png" />
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                POST method:
+                <ul class="slds-list_dotted">
+                    <li>Response</li>
+                    <ul class="slds-list_dotted">
+                        <li>Status: 201 - Created</li>
+                        <li>Body Type: To-Do</li>
+                    </ul>
+                    <li>
+                        Body:
+                        <ul class="slds-list_dotted">
+                            <li>Type: To-Do</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="slds-list_dotted">
+            <li>Create a /todos/&#123;id&#125; resource with the following details:</li>
+            <ul class="slds-list_dotted">
+                <li>
+                    URI Parameters:
+                    <ul class="slds-list_dotted">
+                        <li>URI Parameter Name: id</li>
+                        <li>Required: True</li>
+                        <li>Type: Number</li>
+                    </ul>
+                </li>
+                <li>
+                    GET method:
+                    <ul class="slds-list_dotted">
+                        <li>
+                            Response
+                            <ul class="slds-list_dotted">
+                                <li>Status: 200 - OK</li>
+                                <li>Body Type: To-Do</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    PUT method:
+                    <ul class="slds-list_dotted">
+                        <li>
+                            Response:
+                            <ul class="slds-list_dotted">
+                                <li>Status: 200 - OK</li>
+                                <li>Body Type: To-Do</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Body
+                            <ul class="slds-list_dotted">
+                                <li>Type: To-Do</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    DELETE method:
+                    <ul class="slds-list_dotted">
+                        <li>
+                            Response:
+                            <ul class="slds-list_dotted">
+                                <li>Status: 204 - No content</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+        <li>
+            Copy the public link from the Mocking Service Configuration (make
+            sure you make it public) and take note of this link.
+        </li>
+        <li>
+            Publish this API Specification to Exchange with the default values
+            (Asset version 1.0.0, API version v1, Stable).
+        </li>
+        <li>Open the API Specification in Exchange for staff to verify.</li>
+    </ul>
+</template>

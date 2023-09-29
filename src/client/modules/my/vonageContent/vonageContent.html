@@ -1,0 +1,102 @@
+<template>
+    <div class="slds-p-around_medium wrapper">
+        <div
+            class="slds-m-top_xx-large slds-m-bottom_x-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Vonage Hack</b>
+        </div>
+
+        <div
+            class="slds-grid slds-grid_align-center slds-wrap slds-gutters slds-m-bottom_x-large showhack"
+        >
+            <dx-card
+                class="slds-m-bottom_x-large beginner slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Use Vonage AI Studio + Salesforce to develop an intelligent customer engagement solution"
+                started="true"
+            >
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="8"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack8.completed}
+                        hack-number="8"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+            <!-- <template if:true={checked2}>
+            <dx-card
+                class="slds-m-bottom_x-large intermediate slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-small-size_1-of-2"
+                heading="Update Salesforce Data using Tableau's new External Actions feature"
+                started="true"
+            >
+                
+                <div
+                    class="slds-m-top_medium requirements slds-text-align_left"
+                >
+                    <my-hack hack-number="8"></my-hack>
+                </div>
+                <div
+                    class="slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+                >
+                    <my-verify-hack
+                        hack-completed={hacks.hack8.completed}
+                        hack-number="8"
+                        attendee-id={attendeeId}
+                        onhackverified={completeHack}
+                        attendee-code={attendeeCode}
+                    ></my-verify-hack>
+                </div>
+            </dx-card>
+        </template>-->
+        </div>
+
+        <div
+            class="slds-m-top_xx-large slds-text-align_center slds-text-heading_large itc title"
+        >
+            <b>Helpful Resources</b>
+        </div>
+        <div
+            class="slds-align_absolute-center slds-text-align_center slds-m-bottom_xx-large slds-text-heading_small"
+            style="line-height: 30px; margin-top: 25px"
+        >
+            <ul class="slds-list_dotted slds-text-align_left">
+                <li>
+                    <i>Vonage Mini-hack Tutorial:</i>&nbsp;<a
+                        href="https://github.com/Vonage-Community/sample-salesforce-minihack"
+                        target="_blank"
+                        >https://github.com/Vonage-Community/sample-salesforce-minihack
+                    </a>
+                </li>
+                <li>
+                    <i>Vonage Developer Account:</i>&nbsp;<a
+                        href="https://vonage.dev/Camp-MiniHack"
+                        target="_blank"
+                        >https://vonage.dev/Camp-MiniHack
+                    </a>
+                </li>
+                <li>
+                    <i>Vonage Documentation:</i>&nbsp;<a
+                        href="https://developer.vonage.com/en/documentation"
+                        target="_blank"
+                        >https://developer.vonage.com/en/documentation
+                    </a>
+                </li>
+                <li>
+                    <i>Vonage Developer Blog:</i>&nbsp;<a
+                        href="https://developer.vonage.com/en/blog"
+                        target="_blank"
+                        >https://developer.vonage.com/en/blog</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
